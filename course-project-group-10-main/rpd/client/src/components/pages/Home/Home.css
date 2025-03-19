@@ -1,0 +1,60 @@
+.Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(assets/images/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes zoom_button {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+@keyframes shake_button {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(5%, 5%, 0);
+  }
+  40% {
+    transform: translate3d(-5%, -5%, 0);
+  }
+  60% {
+    transform: translate3d(5%, -5%, 0);
+  }
+  80% {
+    transform: translate3d(-5%, 5%, 0);
+  }
+}
+
+.Home a {
+  position: absolute;
+  display: inline-block;
+  margin: auto;
+  top: 65%;
+  left: 12%;
+}
+
+.Home .homeButton {
+  width: 40%;
+}
+
+.Home .homeButton:hover {
+  animation: zoom_button 1s infinite, shake_button 1s infinite;
+  cursor: pointer;
+}

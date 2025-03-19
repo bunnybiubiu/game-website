@@ -1,0 +1,116 @@
+type SnakeGame {
+  _id: ID!
+  id: Int!
+  snake: [Position!]!
+  direction: String!
+  food: Position!
+  score: Int!
+}
+
+type brick {
+  originY: Int!
+  brickRowCount: Int!
+  brickColumnCount: Int!
+  width: Int!
+  height: Int!
+  level: Int!
+  x_render: Int!
+  y_render: Int!
+  x1_render: Int!
+  y1_render: Int!
+  x_real: Int!
+  y_real: Int!
+  x1_real: Int!
+  y1_real: Int!
+}
+
+type ball {
+  x: Float!
+  y: Float!
+  dx: Float!
+  dy: Float!
+  rad: Int!
+  speed: Int!
+}
+
+type GoogleUser {
+  _id: ID!
+  id: Int!
+  email: String!
+  name: String!
+}
+
+type Position {
+  x: Int!
+  y: Int!
+}
+
+type BreakoutGame {
+  _id: ID!
+  id: Int!
+  bricks: [[brick]]
+  ball: ball!
+  score: Int!
+}
+
+input PositionInput {
+  x: Int!
+  y: Int!
+}
+
+input GoogleUserInput {
+  email: String!
+  name: String!
+}
+
+input SnakeGameInput {
+  id: Int!
+  snake: [PositionInput!]!
+  direction: String!
+  food: PositionInput!
+  score: Int!
+}
+
+input breakoutGameInput {
+  id: Int!
+  bricks: [[brickInput]]
+  ball: ballInput!
+  score: Int!
+}
+
+input brickInput {
+  originY: Int!
+  brickRowCount: Int!
+  brickColumnCount: Int!
+  width: Int!
+  height: Int!
+  level: Int!
+  x_render: Int!
+  y_render: Int!
+  x1_render: Int!
+  y1_render: Int!
+  x_real: Int!
+  y_real: Int!
+  x1_real: Int!
+  y1_real: Int!
+}
+
+input ballInput {
+  x: Float!
+  y: Float!
+  dx: Float!
+  dy: Float!
+  rad: Int!
+  speed: Int!
+}
+
+type Query {
+  getGoogleUser(email: String!): GoogleUser!
+  getSnakeGame(id: Int!): SnakeGame!
+  getBreakoutGame(id: Int!): BreakoutGame!
+}
+type Mutation {
+  addGoogleUser(user: GoogleUserInput!): GoogleUser!
+  syncSnakeGame(snakeGame: SnakeGameInput!): SnakeGame!
+  syncBreakoutGame(breakoutGame: breakoutGameInput!): BreakoutGame!
+}

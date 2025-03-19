@@ -1,0 +1,63 @@
+.Games-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background-image: url(assets/gameImages/Games_Background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.Games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%; /* Take full width to center all items inside it */
+}
+.parent {
+  margin: 3rem;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  width: 720px; /* Explicit width for container */
+  height: 480px; /* Explicit height for container */
+}
+
+.child {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  transition: all 1.1s;
+}
+
+.Games-container .game-title {
+  display: flex;
+  text-align: center;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000; /* Black border */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 50rem) {
+  .Games-container {
+    height: 130vh;
+    flex-wrap: wrap;
+  }
+  .parent {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+.Games .parent:hover .child {
+  transform: scale(1.2);
+}

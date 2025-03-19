@@ -1,0 +1,73 @@
+.board-container {
+  background-color: rosybrown;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.board-container .game-title {
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  display: flex;
+}
+.board-container .game-title h1 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.board-container .game-title .load-button {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  cursor: pointer;
+  background-color: #303030;
+  color: #d3d3d3;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.board-container .game-title .log-button {
+  margin-left: 3rem;
+  margin-right: 3rem;
+  background-color: #606060;
+  color: #d3d3d3;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.board-container .game-title img {
+  height: 32px;
+  weight: 32px;
+  margin: auto;
+}
+.board {
+  background-color: rgb(154, 197, 3);
+  border-radius: 10px;
+  margin: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+.board .game-over {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.board .row {
+  height: 25px;
+}
+
+.board .row .col {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+.board .row .snake-cell {
+  border-radius: 10px;
+  background-color: black;
+}
+.board .row .food-cell {
+  border-radius: 10px;
+  background-color: brown;
+}
